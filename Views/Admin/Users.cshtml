@@ -1,0 +1,17 @@
+﻿@model IEnumerable<AdminUserViewModel>
+
+
+@*skriva ut lista*@
+<h1>All users</h1>
+@foreach (var user in Model)
+{
+    <div class="mb-4">
+        @user.FirstName@user.LastName -
+        (
+        @foreach (var role in user.Roles)
+        {
+            <span class="¨mr-1">@role</span>
+        }
+        )
+    </div>
+}

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Upp1_admin.Models.SchoolClass>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                  Class Name                         @*@Html.DisplayNameFor(model => model.Id)*@
+            </th>
+            <th>
+                 Created date                                    @*@Html.DisplayNameFor(model => model.Year)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Teacher)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <th>
+                     @item.Id                   @*@Html.DisplayNameFor(modelItem => item.Id)*@
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <th>
+                    @item.Teacher                            @*@Html.DisplayNameFor(modelItem => item.Teacher)*@
+            </th>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

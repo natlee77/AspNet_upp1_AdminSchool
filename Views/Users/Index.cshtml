@@ -1,0 +1,29 @@
+﻿@model IEnumerable<AppUser>
+<a asp-action="Create">Add New User</a>
+
+<h2>Administrator</h2>
+@foreach (var user in ViewBag.Admins)
+{
+    <div class="mb-4">
+        @user.GetDisplayName()
+        @*@Html.DropDownListFor(model => model.Id, new SelectList(ViewBag.Roles, "Id", "Name"), "Choose role")*@
+    </div>
+}
+
+<h2>Teachers</h2>
+@foreach (var user in ViewBag.Teachers)
+{
+    <div class="mb-4">
+        @user.GetDisplayName()
+        @*@Html.DropDownListFor(model => model.Id, new SelectList(ViewBag.Roles, "Id", "Name"), "Choose role")*@
+    </div>
+}
+
+<h2>Students</h2>
+@foreach (var user in ViewBag.Students)
+{
+    <div class="mb-4">
+        @user.GetDisplayName()
+        @*@Html.DropDownListFor(model => model.Id, new SelectList(ViewBag.Roles, "Id", "Name"), "Choose role")*@
+    </div>
+}

@@ -1,0 +1,11 @@
+﻿@model IEnumerable<IdentityRole>
+
+
+
+<a asp-action="CreateRole" class=" btn btn-primary mb-5">Add new role</a>
+
+@*skriva ut lista*@
+@foreach (var role in Model)
+{
+    <div class="mb-4">   @role.Name </div>
+}
